@@ -66,6 +66,6 @@ def langchain(user_input):
     retrieved_docs = vector_store.similarity_search(user_input)
     docs_content = '\n\n'.join(doc.page_content for doc in retrieved_docs)
     prompt = prompt.invoke({'question': user_input, 'context': docs_content})
-    answer = lim.invoke(prompt).content
+    answer = llm.invoke(prompt).content
 
     return answer

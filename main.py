@@ -10,9 +10,9 @@ from utils import kospi, openai, langchain
 app = FastAPI()
 
 load_dotenv()
-OPEN_API_KEY = os.getenv('OPEN_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
-os.environ['OPEN_API_KEY'] = OPEN_API_KEY
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
 URL = f'http://api.telegram.org/bot{TOKEN}'
 
 @app.post("/") # get 요청이 아니라 post 요청임
